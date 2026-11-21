@@ -1,0 +1,26 @@
+{
+  "name": "react-hydration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:server": "esbuild index.js --bundle --platform=node --format=esm --packages=external --jsx=automatic --loader:.js=jsx --outfile=dist/server.js",
+    "build:client": "esbuild client/index.js --bundle --format=esm --jsx=automatic --loader:.js=jsx --outfile=public/client.js",
+    "start": "npm run build:client && npm run build:server && node dist/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.15.0",
+    "express": "^5.3.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-redux": "^9.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "tsx": "^4.23.15"
+  }
+}
